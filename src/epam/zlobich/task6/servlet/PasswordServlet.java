@@ -3,7 +3,6 @@ package epam.zlobich.task6.servlet;
 import epam.zlobich.task6.entity.entitybd.Conference;
 import epam.zlobich.task6.entity.entitybd.UserBD;
 import epam.zlobich.task6.service.ConferenceService;
-import epam.zlobich.task6.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
