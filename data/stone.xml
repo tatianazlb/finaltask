@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<stones xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xs:noNamespaceSchemaLocation="stone.xsd">
+    <gem name = "granat" weight = "12" id = "123">
+        <country>Belarus</country>
+        <price>12.03</price>
+    </gem>
+
+    <golem name = "Vasya" weight = "12000" id = "124">
+        <country>France</country>
+        <owner>Strashyi chernyi mag</owner>
+    </golem>
+
+</stones>

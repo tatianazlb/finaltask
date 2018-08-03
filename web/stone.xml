@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<stones xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xs:noNamespaceSchemaLocation="stone.xsd">
+    <gem name = "granat" weight = "12" id = "123">
+        <country>Belarus</country>
+        <price>12.03</price>
+    </gem>
+
+    <gem name = "ruby" weight = "18" id = "121">
+        <country>Russia</country>
+        <price>17.33</price>
+    </gem>
+
+    <golem name = "Vasya" weight = "12000" id = "124">
+        <country>France</country>
+        <owner>Strashyi chernyi mag</owner>
+    </golem>
+
+    <golem name = "Jekill" weight = "16000" id = "125" element = "AIR">
+        <country>England</country>
+        <owner>Her Majesty</owner>
+    </golem>
+
+    <gem name = "ametyth" weight = "10" id = "126">
+        <country>Belarus</country>
+        <price>12.93</price>
+    </gem>
+
+    <gem name = "perl" weight = "28" id = "127">
+        <country>Moldova</country>
+        <price>87.33</price>
+    </gem>
+
+    <golem name = "Karl" weight = "12560" id = "128" element = "AIR">
+        <country>Japan</country>
+        <owner>Lina</owner>
+    </golem>
+
+    <golem name = "HIde" weight = "17540" id = "129" element = "AIR">
+        <country>China</country>
+        <owner>Her Majesty</owner>
+    </golem>
+
+    <gem name = "almaz" weight = "12" id = "130">
+        <country>Neverland</country>
+        <price>102.03</price>
+    </gem>
+
+    <gem name = "firestone" weight = "19" id = "131">
+        <country>Prussia</country>
+        <price>17.33</price>
+    </gem>
+
+    <golem name = "Dracula" weight = "475750" id = "132">
+        <country>Tegeran</country>
+        <owner>Stoker</owner>
+    </golem>
+
+    <golem name = "Franky" weight = "15400" id = "133" element = "EARTH">
+        <country>England</country>
+        <owner>Beetles</owner>
+    </golem>
+
+    <gem name = "black onix" weight = "32" id = "134">
+        <country>Greece</country>
+        <price>1.993</price>
+    </gem>
+
+    <gem name = "tiger eye" weight = "28" id = "135">
+        <country>Ireland</country>
+        <price>15.33</price>
+    </gem>
+
+    <golem name = "Vasya" weight = "12455" id = "136">
+        <country>German</country>
+        <owner>Lun Ui</owner>
+    </golem>
+
+    <golem name = "Jekill" weight = "16050" id = "137" element = "WATER">
+        <country>Iran</country>
+        <owner>Majere</owner>
+    </golem>
+
+
+</stones>
