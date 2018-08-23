@@ -1,13 +1,13 @@
 package epam.zlobich.task6.tag;
 
-import epam.zlobich.task6.entity.entitybd.UserBD;
+import epam.zlobich.task6.entity.entitybd.UserBd;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.TagSupport;
 
 
-import epam.zlobich.task6.entity.entitybd.UserBD;
+import epam.zlobich.task6.entity.entitybd.UserBd;
 
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;

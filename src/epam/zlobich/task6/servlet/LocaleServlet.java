@@ -23,8 +23,6 @@ public class LocaleServlet extends HttpServlet {
 
         ResourceBundle rb = ResourceBundle.getBundle("app", new Locale(request.getParameter("lbutton")));
         request.getSession().setAttribute("bundle", rb);
-        String a;
-
         request.getRequestDispatcher(PageName.INDEX_PAGE.getPageName()).forward(request, response);
     }
 }

@@ -4,17 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-
-    <servlet>
-        <display-name>ParseServletdisplay</display-name>
-        <servlet-name>/parseServlet</servlet-name>
-        <servlet-class>epam.zlobich.task6.servlet.ParseServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>/parseServlet</servlet-name>
-        <url-pattern>/parseServlet</url-pattern>
-    </servlet-mapping>
-
     <display-name>FirstProject</display-name>
     <session-config>
         <session-timeout>30</session-timeout>
@@ -28,4 +17,18 @@
             <taglib-location>/WEB-INF/tld/custom.tld</taglib-location>
         </taglib>
     </jsp-config>
+
+    <context-param>
+        <param-name>databaseurl</param-name>
+        <param-value>jdbc:mysql://localhost:3306/conferencebdschema</param-value>
+    </context-param>
+    <context-param>
+        <param-name>databaseuser</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>databasepassword</param-name>
+        <param-value>root</param-value>
+    </context-param>
+
 </web-app>

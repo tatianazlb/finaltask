@@ -41,9 +41,4 @@ public class Conference {
         return place;
     }
 
-    public String toListForAdmin()
-    {
-        return "<li><a href=\"theme.jsp\">"+name+ " in "+place+"</a>";
-
-    }
 }

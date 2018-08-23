@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="EPAM_6_Try:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/EPAM_6_Try_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="EPAM_6_Try/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="EPAM_6_Try" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.111" />
+          <element id="library" level="project" name="log4j-api-2.9.01" />
+          <element id="library" level="project" name="jstl" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

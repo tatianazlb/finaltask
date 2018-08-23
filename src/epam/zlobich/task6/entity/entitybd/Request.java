@@ -28,4 +28,9 @@ public class Request {
     public void setUser(String user) {
         this.user = user;
     }
+
+    public String toTableRowWithDelete() {
+        return "<tr><td>"+title+"</td><td>"+themeName+"</td><td>" +
+                "<button type=\"submit\" name=\"title\" value=\""+title+"\">Delete this request</button>"+"</td><td>";
+    }
 }

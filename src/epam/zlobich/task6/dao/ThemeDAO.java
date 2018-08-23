@@ -1,76 +1,120 @@
 package epam.zlobich.task6.dao;
 
-import epam.zlobich.task6.entity.entitybd.Conference;
 import epam.zlobich.task6.entity.entitybd.Theme;
-import epam.zlobich.task6.pool.ConnectionPool;
+import epam.zlobich.task6.exception.DaoException;
+import epam.zlobich.task6.pool.ProxyConnection;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThemeDAO extends AbstractDAO<String, Theme> {
+public class ThemeDao extends AbstractDao<String, Theme> {
+
+
+    private final static Logger LOGGER = LogManager.getLogger(ThemeDao.class);
+
+    private final static String FIND_BY_CONFERENCE = "SELECT * FROM theme WHERE Conference_idConference=?";
+    private final static String ADD_THEME = "INSERT INTO theme (Name, Date, Conference_idConference) VALUES (?, ?, ?)";
+
+
+    ThemeDao()
+    {};
     @Override
     public List<Theme> findAll() {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public Theme findEntityById(String id) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
-    public List<Theme> findByConference(Integer idConf) {
+    public List<Theme> findByConference(Integer idConf) throws DaoException {
 
-        ResultSet rsObj = null;
-        Connection connObj = null;
-        PreparedStatement pstmtObj = null;
-        ConnectionPool pool = new ConnectionPool();
+        ResultSet resultSet = null;
+        ProxyConnection connection = null;
+        PreparedStatement preparedStatement = null;
+
         ArrayList<Theme> list = new ArrayList<>();
 
         try {
-            connObj = pool.retrieve();
+            connection = new ProxyConnection();
 
-            pstmtObj = connObj.prepareStatement("SELECT * FROM theme WHERE Conference_idConference='" +idConf+"'");
-            rsObj = pstmtObj.executeQuery();
+            preparedStatement = connection.prepareStatement(FIND_BY_CONFERENCE);
+            preparedStatement.setInt(1, idConf);
+            resultSet = preparedStatement.executeQuery();
 
-            while (rsObj.next()) {
+            while (resultSet.next()) {
 
                 Theme theme = new Theme();
-                theme.setName(rsObj.getString("Name"));
+                theme.setName(resultSet.getString(ColumnNames.THEME_NAME));
                 theme.setIdConference(idConf);
-                theme.setDate(rsObj.getDate("Date"));
+                theme.setDate(resultSet.getDate(ColumnNames.THEME_DATE));
 
                 list.add(theme);
             }
-
             return list;
-
         }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
+        catch (SQLException e){
+            throw new DaoException(e);
+        } finally {
+            if (preparedStatement!=null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    LOGGER.log(Level.INFO, e.getMessage());
+                }
+            }
+            if(connection!=null) {
+                connection.close();
+            }
         }
-        finally {
-            pool.putback(connObj);
-        }
-        return null;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean create(Theme entity) {
-        return false;
+    public boolean create(Theme entity) throws DaoException {
+        ProxyConnection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            if (findEntityById(entity.getName())!=null) return false;
+            connection = new ProxyConnection();
+
+            preparedStatement = connection.prepareStatement(ADD_THEME);
+            preparedStatement.setString(1, entity.getName());
+            preparedStatement.setDate(2, new java.sql.Date(entity.getDate().getTime()));
+            preparedStatement.setInt(3, entity.getIdConference());
+
+            preparedStatement.execute();
+            return true;
+
+        }
+        catch (SQLException e){
+            throw new DaoException(e);
+        } finally {
+            if (preparedStatement!=null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    LOGGER.log(Level.INFO, e.getMessage());
+                }
+            }
+            if(connection!=null) {
+                connection.close();
+            }
+        }
     }
 
     @Override
     public Theme update(Theme entity) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

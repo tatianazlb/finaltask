@@ -1,0 +1,10 @@
+epam.zlobich.task6.command
+epam.zlobich.task6.dao
+epam.zlobich.task6.entity.entitybd
+epam.zlobich.task6.exception
+epam.zlobich.task6.filter
+epam.zlobich.task6.pool
+epam.zlobich.task6.router
+epam.zlobich.task6.service
+epam.zlobich.task6.servlet
+epam.zlobich.task6.tag

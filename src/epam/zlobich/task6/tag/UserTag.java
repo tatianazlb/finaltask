@@ -1,6 +1,6 @@
 package epam.zlobich.task6.tag;
 
-import epam.zlobich.task6.entity.entitybd.UserBD;
+import epam.zlobich.task6.entity.entitybd.UserBd;
 
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.JspWriter;
@@ -14,7 +14,7 @@ public class UserTag extends TagSupport{
 
     public int doStartTag() throws JspTagException {
 
-        if(((UserBD)pageContext.getSession().getAttribute("user")).isRole()) return SKIP_BODY;
+        if(((UserBd)pageContext.getSession().getAttribute("user")).isRole()) return SKIP_BODY;
 
         return EVAL_BODY_INCLUDE;
     }
