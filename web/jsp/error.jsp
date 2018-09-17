@@ -14,7 +14,7 @@
 
 <div align="center">
 
-    <div><img src="SorryImage.png" alt="nof"/></div>
+    <div><img src="/jsp/SorryImage.png" alt="We are so sorry"/></div>
 
 
     <p>We are sorry, there is something wrong.</p>

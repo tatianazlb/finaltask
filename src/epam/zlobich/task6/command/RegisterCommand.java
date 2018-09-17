@@ -21,7 +21,7 @@ public class RegisterCommand extends AbstractCommand{
             user.setHomeland(request.getParameter("homeland"));
             user.setLogin(request.getParameter("login"));
 
-            if (new UserService().addUser(user, request.getParameter("pass"))) {
+            if (new UserService().addUser(user, request.getParameter("password"))) {
                 request.setAttribute("registercheck", rb.getString("usercreated"));
             } else request.setAttribute("registercheck", rb.getString("samelogin"));
 

@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LectureDao extends AbstractDao<String, Lecture> {
+public class LectureDao implements AbstractDao<String, Lecture> {
 
 
     private final static Logger LOGGER = LogManager.getLogger(LectureDao.class);

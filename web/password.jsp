@@ -39,7 +39,7 @@
 
 <div align="center">
 
-    ${sorry}
+    ${registercheck}
 
     <form name="test" method="post" action="/main">
         <input type="hidden" name="command" value="login">
@@ -47,19 +47,19 @@
         <input required pattern="[A-Za-z]+" type="text" name="login" size="45" maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("wronglogin")%>')"
                oninput="this.setCustomValidity('')">
         <p><b><%= RB.getString("password") %></b></p>
-        <input required type="text" name="pass" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
+        <input required type="password" name="password" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
                oninput="this.setCustomValidity('')">
-        <div><button type="submit"><%= RB.getString("subm") %></button>
-            <button type="reset"><%= RB.getString("cl") %></button></div>
+        <div><button type="submit" class="w3-button w3-black w3-hover-light-green"><%= RB.getString("subm") %></button>
+            <button type="reset" class="w3-button w3-black w3-border w3-hover-light-green"><%= RB.getString("cl") %></button></div>
     </form>
 </div>
 
 <br>
 
 <div align="center" class="w3-container">
-    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Register</button>
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><%=RB.getString("register")%></button>
     <div id="id01" class="w3-modal">
-        <div class="w3-modal-content">
+        <div class="w3-modal-content w3-border w3-border-green w3-round-large">
             <div class="w3-container">
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <form name="test" method="post" action="/register">
@@ -68,13 +68,13 @@
                     <input required pattern="[A-Za-z]+" type="text" name="login" size="45" maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("wronglogin")%>')"
                            oninput="this.setCustomValidity('')">
                     <p><b><%= RB.getString("password") %></b></p>
-                    <input required type="text" name="pass" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
+                    <input required type="password" name="password" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
                            oninput="this.setCustomValidity('')">
                     <p><b><%= RB.getString("passwordA") %></b></p>
-                    <input required type="text" name="passA" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
+                    <input required type="password" name="passwordA" size="45"maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("passwordnotnull")%>')"
                            oninput="this.setCustomValidity('')">
                     <p><b><%= RB.getString("homeland") %></b></p>
-                    <input required pattern="[A-Za-z]+" type="text" name="login" size="45" maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("wronghomeland")%>')"
+                    <input required pattern="[A-Za-z]+" type="text" name="homeland" size="45" maxlength="45" oninvalid="this.setCustomValidity('<%=RB.getString("wronghomeland")%>')"
                            oninput="this.setCustomValidity('')">
                     <div><button type="submit"><%= RB.getString("subm") %></button>
                         <button type="reset"><%= RB.getString("cl") %></button></div>

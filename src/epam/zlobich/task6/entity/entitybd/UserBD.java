@@ -45,11 +45,11 @@ public class UserBd {
         catch (NullPointerException e)
         {
             avatar = null;
-            try {
+            /*try {
                 avatar = ImageIO.read(new File("C:\\Users\\User\\IdeaProjects\\EPAM_6_Try\\web\\2_3.jpg"));
             } catch (IOException ee) {
                 ee.printStackTrace();
-            }
+            }*/
         }
     }
 

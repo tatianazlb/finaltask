@@ -8,14 +8,11 @@ import java.sql.Statement;
 import java.util.List;
 
 
-public abstract class AbstractDao<K, T> {
+public interface AbstractDao<K, T> {
+    List<T> findAll() throws DaoException;
+    T findEntityById(K id) throws  DaoException;
+    boolean delete(K id) throws  DaoException;
+    boolean create(T entity) throws  DaoException;
+    T update(T entity) throws DaoException;
 
-
-    ConnectionPool pool = ConnectionPool.getInstance();
-
-    public abstract List<T> findAll() throws DaoException;
-    public abstract T findEntityById(K id) throws  DaoException;
-    public abstract boolean delete(K id) throws  DaoException;
-    public abstract boolean create(T entity) throws  DaoException;
-    public abstract T update(T entity) throws DaoException;
 }

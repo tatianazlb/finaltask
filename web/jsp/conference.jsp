@@ -29,15 +29,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-    <div align="right">
-        <form name="test" action="/myroom" method="POST">
-            <input type="hidden" name="command" value="mypage">
-            <input type="submit" name="button" value="MYPAGE">
-        </form>
-    </div>
 </head>
 <body>
+
+<div align="right">
+    <form name="test" action="/myroom" method="POST">
+        <input type="hidden" name="command" value="mypage">
+        <input type="submit"  class="w3-button w3-white w3-border w3-border-green w3-round-large" name="button" value="MYPAGE">
+    </form>
+</div>
 
 <div align="center" style="max-width: 600px; margin: 0 auto;">
 
@@ -68,6 +68,7 @@
     <br>
     <br>
     <br>
+    <%=rb.getString("exconf")%>
 
     <form name="test" action="/conference" method="POST">
         <input type="hidden" name="command" value="registerforconference">

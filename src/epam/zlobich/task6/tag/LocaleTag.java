@@ -24,9 +24,9 @@ public class LocaleTag extends TagSupport {
         try {
             JspWriter out = pageContext.getOut();
             String temp =  "<div align=\"right\"><form name=\"test\" method=\"post\" action=\"/locale\"> " +
-                    "<div><button type=\"submit\" name=\"lbutton\" value=\"ru\">" +
+                    "<div><button type=\"submit\" class=\"w3-button w3-white w3-border w3-border-green w3-round-large\" name=\"lbutton\" value=\"ru\">" +
                     ((ResourceBundle)pageContext.getSession().getAttribute("bundle")).getString("ru")+
-                    "</button> <button type=\"submit\"name=\"lbutton\" value=\"en\">" +
+                    "</button> <button type=\"submit\" class=\"w3-button w3-white w3-border w3-border-green w3-round-large\" name=\"lbutton\" value=\"en\">" +
                     ((ResourceBundle)pageContext.getSession().getAttribute("bundle")).getString("en")+
                     "</button></div> </form><div>";
 

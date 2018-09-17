@@ -17,7 +17,7 @@ public class LoginCommand extends AbstractCommand {
         ResourceBundle rb = (ResourceBundle)request.getSession().getAttribute("bundle");
 
         try {
-            currUser = new UserService().checkUser(request.getParameter("login"), request.getParameter("pass"));
+            currUser = new UserService().checkUser(request.getParameter("login"), request.getParameter("password"));
 
         } catch (ServiceException e) {
             request.setAttribute("exception", e);

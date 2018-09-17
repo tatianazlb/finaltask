@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThemeDao extends AbstractDao<String, Theme> {
+public class ThemeDao implements AbstractDao<String, Theme> {
 
 
     private final static Logger LOGGER = LogManager.getLogger(ThemeDao.class);

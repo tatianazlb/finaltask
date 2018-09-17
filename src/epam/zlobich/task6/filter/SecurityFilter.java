@@ -34,14 +34,8 @@ public class SecurityFilter implements Filter {
             dispatcher.forward(req, resp);
             return;
         }
-        try {
             chain.doFilter(req, resp);
-        }
-        catch (ServletException e)
-        {
-            req.setAttribute("exception", e);
-            request.getServletContext().getRequestDispatcher("/"+ JspPath.ERROR_JSP).forward(req, resp);
-        }
+
     }
 
     public void init(FilterConfig config) throws ServletException {

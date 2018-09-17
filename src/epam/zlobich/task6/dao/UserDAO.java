@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.List;
 
-public class UserDao extends AbstractDao<String, UserBd> {
+public class UserDao implements AbstractDao<String, UserBd> {
 
     private final static Logger LOGGER = LogManager.getLogger(UserDao.class);
 
@@ -21,7 +21,6 @@ public class UserDao extends AbstractDao<String, UserBd> {
     private final static String FIND_BY_ID = "SELECT * FROM user WHERE Login=?";
     private final static String ADD_USER = "INSERT INTO user (Login, Password, AdminCheck, Homeland) VALUES (?, ?, 0, ?)";
     private final static String DELETE_USER = "DELETE FROM user WHERE Login=?";
-
     private final static String UPDATE_USER = "UPDATE user SET Homeland = ?, Avatar = ? WHERE Login = ?";
 
     private final static String FIND_USER_CONFERENCES = "SELECT * FROM user_has_conference WHERE User_Login=?";

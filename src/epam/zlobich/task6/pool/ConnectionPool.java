@@ -24,12 +24,6 @@ public class ConnectionPool {
     private ArrayList<Connection> usedConns = new ArrayList<>();
 
 
-    /*private String url ="jdbc:mysql://localhost:3306/conferencebdschema";
-    private String driver = "com.mysql.jdbc.Driver";
-    private String user = "root";
-    private String pass = "root";*/
-
-
     private static Properties properties = new Properties();
 
     private static final ConnectionPool instance = new ConnectionPool();
@@ -42,12 +36,6 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-
-            /*input = new FileInputStream("C:\\Users\\User\\IdeaProjects\\EPAM_6_Try\\web\\prop\\jdbc.properties");
-            //input = new FileInputStream("prop/jdbc.properties");
-            //input = new FileInputStream("jdbc.properties");
-            properties.load(input);*/
-
             properties = PropertyClass.getProperties();
 
             for (int i = 0; i < initConnCnt; i++) {

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class ConferenceDao extends AbstractDao<Integer, Conference> {
+public class ConferenceDao implements AbstractDao<Integer, Conference> {
 
     private final static Logger LOGGER = LogManager.getLogger(ConferenceDao.class);
     private final static String FIND_ALL = "SELECT * FROM conference";

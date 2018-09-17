@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionDao extends AbstractDao<Integer, Question> {
+public class QuestionDao implements AbstractDao<Integer, Question> {
     private final static Logger LOGGER = LogManager.getLogger(QuestionDao.class);
 
     private final static String FIND_BY_USER = "SELECT * FROM question WHERE User_Login=?";

@@ -11,16 +11,6 @@
     <short-name>ctg</short-name>
     <uri>customtags</uri>
     <tag>
-        <name>adminTag</name>
-        <tag-class>epam.zlobich.task6.tag.AdminTag</tag-class>
-        <body-content>scriptless</body-content>
-    </tag>
-    <tag>
-        <name>userTag</name>
-        <tag-class>epam.zlobich.task6.tag.UserTag</tag-class>
-        <body-content>scriptless</body-content>
-    </tag>
-    <tag>
         <name>localeTag</name>
         <tag-class>epam.zlobich.task6.tag.LocaleTag</tag-class>
         <body-content>empty</body-content>

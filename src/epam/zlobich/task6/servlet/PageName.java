@@ -1,9 +1,7 @@
 package epam.zlobich.task6.servlet;
 
 public enum PageName {
-    INDEX_PAGE("password.jsp"),
-    BUTTON_PAGE("button.jsp"),
-    PARSING_PAGE("table.jsp");
+    INDEX_PAGE("password.jsp");
 
     private String pageName;
 

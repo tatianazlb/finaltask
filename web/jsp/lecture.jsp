@@ -35,6 +35,14 @@
 
 
 <body onload="validForm()">
+
+<div align="right">
+    <form name="test" action="/myroom" method="POST">
+        <input type="hidden" name="command" value="mypage">
+        <input type="submit"  class="w3-button w3-white w3-border w3-border-green w3-round-large" name="button" value="MYPAGE">
+    </form>
+</div>
+
 <div align="center" style="max-width: 600px; margin: 0 auto;">
 
 

@@ -22,7 +22,6 @@ public class ConferenceService {
     public ArrayList<Conference> findUserConferences (UserBd user) throws ServiceException {
         try {
 
-
         ArrayList<Conference> conferences = new ArrayList<>();
 
         for (Integer id:user.getIdConference()

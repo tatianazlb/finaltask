@@ -31,12 +31,18 @@
 
     //<fmt:setLocale value="${sessionScope.locale}"/>
 
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    ImageIO.write(((UserBd) request.getSession().getAttribute("user")).getAvatar(), "jpg", baos );
-    baos.flush();
-    byte[] imageInByteArray = baos.toByteArray();
-    baos.close();
-    String b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+    String b64;
+    try {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(((UserBd) request.getSession().getAttribute("user")).getAvatar(), "jpg", baos);
+        baos.flush();
+        byte[] imageInByteArray = baos.toByteArray();
+        baos.close();
+        b64 = javax.xml.bind.DatatypeConverter.printBase64Binary(imageInByteArray);
+    } catch (Exception e)
+    {
+        b64=null;
+    }
 
 %>
 
@@ -187,7 +193,7 @@
         <%
             for (Question question : (ArrayList<Question>)request.getAttribute("listOfUserQuestions")
                     ) {%>
-        <tr><td><%=question.getId()%></td><td><%=question.getAskedQuestion()%></td><td><%=question.getAnswer()%></td><td>
+        <tr><td><%=question.getId()%></td><td><%=question.getAskedQuestion()%></td><td><%=question.getAnswer()==null? rb.getString("answernull"):question.getAnswer() %></td><td>
             <button  class="w3-button w3-white w3-border w3-border-green w3-round-large" style="width: 100%;" type="submit" name="idQuestion" value="<%=question.getId()%>"><%=rb.getString("deletequestion")%></button></td></tr>
         <%
             }
@@ -216,13 +222,17 @@
 
 
     <br>
-
+<%
+    if(((ArrayList<Question>) request.getAttribute("listOfUserQuestions")).isEmpty() && ((ArrayList<Request>) request.getAttribute("listOfUserRequests")).isEmpty()
+            &&((ArrayList<Lecture>) request.getAttribute("listOfUserLectures")).isEmpty()){
+%>
     <form name="st" action="/main" method="POST">
         <input type="hidden" name="command" value="deleteuser">
         <input class="w3-button w3-white w3-border w3-border-green w3-round-large" style="width: 100%;" type="submit" onclick="return confirm('<%=rb.getString("deleteusercheck")%>')" name="button" value="SUICIDE">
     </form>
 
 <%
+        }
     }
 %>
 

@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RequestDao extends AbstractDao<String, Request> {
+public class RequestDao implements AbstractDao<String, Request> {
 
 
     private final static Logger LOGGER = LogManager.getLogger(RequestDao.class);
